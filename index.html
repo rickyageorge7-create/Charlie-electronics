@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Charlie Electronics Website Offer</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<style>
+/* Layout: one narrow column. Price first, then what is included, then one agree button. */
+:root{
+  --bg:#f5f6f8; --surface:#ffffff; --ink:#0d1626; --muted:#566379; --line:#d7dde7;
+  --accent:#0b72ad; --accent-ink:#ffffff; --sel:#e6f2fa;
+  --wa:#168a48; --wa-ink:#ffffff;
+  --display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0a101b; --surface:#121b2b; --ink:#eaf0f8; --muted:#9aa8bf; --line:#243249;
+    --accent:#3ec1ff; --accent-ink:#021522; --sel:#12304a; --wa:#25d366; --wa-ink:#052e16; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0a101b; --surface:#121b2b; --ink:#eaf0f8; --muted:#9aa8bf; --line:#243249;
+  --accent:#3ec1ff; --accent-ink:#021522; --sel:#12304a; --wa:#25d366; --wa-ink:#052e16; color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink); font-family:var(--body); font-size:16px; line-height:1.5;
+  padding-block:28px 56px;
+  padding-left:max(16px, env(safe-area-inset-left, 0px));
+  padding-right:max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap{max-width:620px; margin:0 auto; display:flex; flex-direction:column; gap:28px}
+.eyebrow{font-size:12px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--display); font-weight:800; font-size:clamp(30px,8vw,42px); line-height:1.08; margin:8px 0 12px; text-wrap:balance}
+.lead{margin:0; color:var(--muted); max-width:52ch}
+.price{background:var(--sel); border:1.5px solid var(--accent); border-radius:10px; padding:20px; display:flex; flex-direction:column; gap:6px}
+.amount{font-family:var(--display); font-weight:800; font-size:clamp(44px,13vw,64px); line-height:1; font-variant-numeric:tabular-nums}
+.price p{margin:0; color:var(--muted)}
+.split{display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px}
+.split div{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:12px; min-width:0}
+.split b{display:block; font-family:var(--display); font-size:22px; font-variant-numeric:tabular-nums}
+.split span{font-size:14px; color:var(--muted)}
+h2{font-family:var(--display); font-weight:600; font-size:21px; line-height:1.2; margin:0 0 8px}
+section{min-width:0}
+ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column}
+li{padding:9px 0 9px 26px; border-bottom:1px solid var(--line); position:relative}
+li::before{content:""; position:absolute; left:4px; top:17px; width:10px; height:6px; border-left:2.5px solid var(--accent); border-bottom:2.5px solid var(--accent); transform:rotate(-45deg)}
+.need li::before{border:0; width:6px; height:6px; background:var(--muted); border-radius:50%; transform:none; top:18px; left:6px}
+.out li::before{border:0; width:10px; height:2.5px; background:var(--muted); transform:none; top:19px; left:3px}
+.actions{border-top:1.5px solid var(--line); padding-top:24px; display:flex; flex-direction:column; gap:12px}
+.go{display:flex; justify-content:center; text-align:center; padding:16px 18px; border-radius:10px; text-decoration:none; font-weight:600; font-size:17px; background:var(--wa); color:var(--wa-ink)}
+.ask{display:flex; justify-content:center; padding:13px 18px; border-radius:10px; text-decoration:none; font-weight:600; border:1.5px solid var(--accent); color:var(--accent)}
+.go:focus-visible,.ask:focus-visible{outline:3px solid var(--accent); outline-offset:3px}
+.note{margin:0; font-size:14px; color:var(--muted)}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <div class="eyebrow">Charlie Electronics &middot; Website offer</div>
+    <h1>Your website, everything included</h1>
+    <p class="lead">One price covers the whole job. There is nothing else to choose and nothing extra to pay for what is listed below.</p>
+  </header>
+
+  <section class="price" aria-label="Price">
+    <div class="amount" id="total">$450</div>
+    <p>Total, one time. Ready about 3 weeks after the first payment and your photos and prices.</p>
+    <div class="split">
+      <div><b id="half1">$225</b><span>to start the work</span></div>
+      <div><b id="half2">$225</b><span>before the website goes live</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The website</h2>
+    <ul>
+      <li>Home page with your logo, tagline, delivery and warranty highlights</li>
+      <li>All your products with photos, specs and prices, sorted into categories</li>
+      <li>Search and price sorting so customers find items fast</li>
+      <li>Made for phones first, with a WhatsApp button on every screen</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Ordering and contact</h2>
+    <ul>
+      <li>An "Order on WhatsApp" button on every product, with the product and price already in the message</li>
+      <li>Delivery information for your customers</li>
+      <li>Both shop numbers, the address, a map link, and your TikTok and Facebook links</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Update it yourself</h2>
+    <ul>
+      <li>A private admin page with a login, where you add, change and remove products, prices and photos from your phone</li>
+      <li>A short written guide and one 30 minute training session</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Address, hosting and support</h2>
+    <ul>
+      <li>Your own .com address, with the first year paid for you</li>
+      <li>Fast, secure hosting with no monthly hosting fee</li>
+      <li>Two rounds of changes before launch</li>
+      <li>30 days of free fixes after launch</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What I need from you</h2>
+    <ul class="need">
+      <li>Clear photos of your products</li>
+      <li>Your current prices and what is in stock</li>
+      <li>Your OK on the logo and colors</li>
+      <li>One person who can approve changes quickly</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Not included</h2>
+    <ul class="out">
+      <li>Online checkout with a cart and Mobile Money payment. If you want it later, I will quote it separately before starting.</li>
+      <li>Any new feature not listed above, quoted separately before any work.</li>
+      <li>The .com renewal after the first year, about $10 to $15 a year.</li>
+    </ul>
+  </section>
+
+  <section class="actions">
+    <a class="go" id="agree" href="#" target="_blank" rel="noopener">I agree. Send to Ricky on WhatsApp</a>
+    <a class="ask" id="question" href="#" target="_blank" rel="noopener">I have a question</a>
+    <p class="note">Tapping a button opens WhatsApp with the message ready. Press send there. Ricky will reply with how to make the first payment.</p>
+  </section>
+</main>
+
+<script>
+/* Edit these three lines to change the offer. */
+var TOTAL = 450;
+var NUMBER = "231555112922";
+var WEEKS = 3;
+
+var half1 = Math.round(TOTAL / 2);
+var half2 = TOTAL - half1;
+document.getElementById("total").textContent = "$" + TOTAL;
+document.getElementById("half1").textContent = "$" + half1;
+document.getElementById("half2").textContent = "$" + half2;
+
+function wa(text) { return "https://wa.me/" + NUMBER + "?text=" + encodeURIComponent(text); }
+document.getElementById("agree").href = wa(
+  "Hello Ricky, I agree to the Charlie Electronics website offer: $" + TOTAL +
+  " in total, $" + half1 + " to start and $" + half2 + " before the website goes live, ready in about " + WEEKS +
+  " weeks. Please tell me how to make the first payment."
+);
+document.getElementById("question").href = wa("Hello Ricky, I have a question about the Charlie Electronics website offer: ");
+</script>
+</body>
+</html>
